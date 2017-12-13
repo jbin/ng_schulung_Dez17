@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Product } from './product/product';
 
 @Component({
   selector: 'stn-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'stn';
+  p: Product = new Product(0, 'Auf wiedersehen', 323);
 }
