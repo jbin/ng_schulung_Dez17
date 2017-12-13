@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ItemComponent } from './item.component';
+import { By } from '@angular/platform-browser';
 
 describe('ItemComponent', () => {
   let component: ItemComponent;
@@ -17,6 +18,13 @@ describe('ItemComponent', () => {
     fixture = TestBed.createComponent(ItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+  });
+
+  it('should bind data correctly', () => {
+    component.product.id = 7;
+    fixture.detectChanges();
+    const idElem = fixture.debugElement.query(By.css('.id'));
+    expect(idElem.nativeElement.textContent).toContain(7);
   });
 
   it('should create', () => {
