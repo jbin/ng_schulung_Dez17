@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { Product } from '../product';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'stn-item',
@@ -9,6 +10,7 @@ import { Product } from '../product';
 export class ItemComponent implements OnInit {
 
   @Input() product: Product = new Product(0, 'Hallo', 23);
+  @Output() productChange: EventEmitter<Product>= new EventEmitter();
 
   constructor() { }
 
@@ -17,6 +19,7 @@ export class ItemComponent implements OnInit {
 
   raisePrice() {
     this.product.price += 5;
+    this.productChange.emit(this.product);
   }
 
 }
