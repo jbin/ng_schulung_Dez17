@@ -9,6 +9,8 @@ import { Validators } from '@angular/forms';
 })
 export class ProductFormComponent implements OnInit {
 
+  // name = 
+    get name() { return this.productForm.get('name'); }
   productForm = new FormGroup({
     id: new FormControl(),
     name: new FormControl('', [Validators.required, Validators.minLength(2)]),

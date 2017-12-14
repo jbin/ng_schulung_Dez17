@@ -1,6 +1,9 @@
 <form class="example-form" [formGroup]="productForm">
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Name" formControlName="name">
+    <input matInput id="name" placeholder="Name" formControlName="name">
+    <mat-error *ngIf="name.hasError('minlength')">
+      Der Name ist ein Pflichtfeld
+    </mat-error>
   </mat-form-field>
   <mat-form-field class="example-full-width">
     <input type="number" matInput placeholder="Preis" formControlName="price">
@@ -8,7 +11,7 @@
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Gewicht" formControlName="weight">
   </mat-form-field>
-  <button mat-raised-button color="primary" [disabled]="!productForm.valid"  (click)="save()">Speichern</button>
+  <button mat-raised-button color="primary" [disabled]="!productForm.valid" (click)="save()">Speichern</button>
 </form>
 
-{{data | json}}
+{{data| json}}
