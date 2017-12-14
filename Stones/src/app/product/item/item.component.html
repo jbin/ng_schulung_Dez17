@@ -1,4 +1,6 @@
+<ng-content></ng-content>
 <div class="id">id: {{product.id}} </div>
 <div>name: {{product.name}}</div>
 <div>price: {{product.price}}</div>
-<button (click)="raisePrice()">Preiserhöhung</button>
+<input type="text" #priceInput>
+<button (click)="changePrice(priceInput)">Preisänderung</button>

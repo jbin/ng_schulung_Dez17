@@ -10,7 +10,7 @@ import { EventEmitter } from '@angular/core';
 export class ItemComponent implements OnInit {
 
   @Input() product: Product = new Product(0, 'Hallo', 23);
-  @Output() productChange: EventEmitter<Product>= new EventEmitter();
+  @Output() productChange: EventEmitter<Product> = new EventEmitter();
 
   constructor() { }
 
@@ -20,6 +20,10 @@ export class ItemComponent implements OnInit {
   raisePrice() {
     this.product.price += 5;
     this.productChange.emit(this.product);
+  }
+
+  changePrice(priceInput) {
+    this.product.price = priceInput.value;
   }
 
 }
