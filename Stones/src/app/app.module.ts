@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ProductModule } from './product/product.module';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatToolbarModule, MatButtonModule } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { Route } from '@angular/router';
 
@@ -18,7 +18,7 @@ const routes: Route[] = [
     AppComponent
   ],
   imports: [
-    BrowserModule, ProductModule, MatToolbarModule, MatIconModule,
+    BrowserModule, ProductModule, MatToolbarModule, MatIconModule,MatButtonModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
