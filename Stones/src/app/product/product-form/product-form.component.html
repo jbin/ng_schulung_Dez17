@@ -2,7 +2,7 @@
   <mat-form-field class="example-full-width">
     <input matInput id="name" placeholder="Name" formControlName="name">
     <mat-error *ngIf="name.hasError('minlength')">
-      Der Name ist ein Pflichtfeld
+      Der Name benötigt min 2 Zeichen
     </mat-error>
   </mat-form-field>
   <mat-form-field class="example-full-width">
