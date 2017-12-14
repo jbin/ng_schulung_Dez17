@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'stn-product-form',
@@ -10,8 +11,8 @@ export class ProductFormComponent implements OnInit {
 
   productForm = new FormGroup({
     id: new FormControl(),
-    name: new FormControl(),
-    price: new FormControl(),
+    name: new FormControl('', [Validators.required, Validators.minLength(2)]),
+    price: new FormControl(null, [Validators.required]),
     weight: new FormControl(),
   });
 
