@@ -3,7 +3,8 @@
   <h1>
     Wilkommen in der {{ title }} App!
   </h1>
+  <h5>{{now | date}}</h5>
  </div>
- <stn-item *ngFor="let prod of productList" [product]="prod"><h3>Produkt</h3></stn-item>
-
-
+ <stn-item *ngFor="let prod of productList" [product]="prod">
+   <h3>Produkt</h3>
+</stn-item>

@@ -8,6 +8,7 @@ import { Product } from './product/product';
 })
 export class AppComponent {
   title = 'stn';
+  now = new Date();
   productList: Array<Product> = [];
 
   constructor() {
