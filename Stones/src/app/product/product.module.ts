@@ -9,6 +9,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { Route } from '@angular/router';
 import { ProductListComponent } from './product-list/product-list.component';
 import { RouterModule } from '@angular/router';
+import { ProductService } from './product.service';
 
 const routes: Route[] = [
   { path: 'products', component: ProductListComponent },
@@ -21,6 +22,7 @@ const routes: Route[] = [
     MatInputModule, MatButtonModule, RouterModule.forChild(routes)
   ],
   declarations: [ItemComponent, BruttoPipe, ProductFormComponent, ProductListComponent],
+  providers: [ProductService],
   exports: [ItemComponent, BruttoPipe, ProductFormComponent]
 })
 export class ProductModule { }
