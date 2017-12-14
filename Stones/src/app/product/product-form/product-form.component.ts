@@ -14,9 +14,16 @@ export class ProductFormComponent implements OnInit {
     price: new FormControl(),
     weight: new FormControl(),
   });
+
+  data: any;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  save() {
+    this.data = this.productForm.value;
+    this.data.id = 0;
   }
 
 
