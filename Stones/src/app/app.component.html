@@ -4,6 +4,6 @@
     Wilkommen in der {{ title }} App!
   </h1>
  </div>
- <stn-item [(product)]="p"><h3>Produkt</h3></stn-item>
+ <stn-item *ngFor="let prod of productList" [product]="prod"><h3>Produkt</h3></stn-item>
 
 

@@ -1,6 +1,8 @@
-<ng-content></ng-content>
-<div class="id">id: {{product.id}} </div>
-<div>name: {{product.name}}</div>
-<div>price: {{product.price}}</div>
-<input type="text" #priceInput>
-<button (click)="changePrice(priceInput)">Preisänderung</button>
+<div [ngStyle]="myStyle" [ngClass]="{'green-border': product.price < 50}" >
+    <ng-content></ng-content>
+    <div class="id">id: {{product.id}} </div>
+    <div>name: {{product.name}}</div>
+    <div>price: {{product.price}}</div>
+    <input type="text" #priceInput>
+    <button (click)="changePrice(priceInput)">Preisänderung</button>
+</div>

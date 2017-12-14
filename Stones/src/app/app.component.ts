@@ -8,5 +8,10 @@ import { Product } from './product/product';
 })
 export class AppComponent {
   title = 'stn';
-  p: Product = new Product(0, 'Auf wiedersehen', 323);
+  productList: Array<Product> = [];
+
+  constructor() {
+    this.productList.push(new Product(0, 'Auf wiedersehen', 323));
+    this.productList.push(new Product(9, 'Hallo', 43));
+  }
 }

@@ -12,6 +12,10 @@ export class ItemComponent implements OnInit {
   @Input() product: Product = new Product(0, 'Hallo', 23);
   @Output() productChange: EventEmitter<Product> = new EventEmitter();
 
+  myStyle = {
+    border : '5px solid'
+  };
+
   constructor() { }
 
   ngOnInit() {
