@@ -1,8 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
-  <h5></h5>
-  <mat-toolbar color="primary">
-      Willkommen in der {{ title }} App! - &nbsp; <small>{{now | date}}</small>
-    </mat-toolbar>
- <stn-item *ngFor="let prod of productList" [product]="prod">
-   <h3>Produkt</h3>
+<mat-toolbar color="primary">
+  <h1>Willkommen in der {{ title }} App!</h1> - &nbsp;
+  <small>{{now | date}}</small>
+</mat-toolbar>
+<stn-product-form></stn-product-form>
+<stn-item *ngFor="let prod of productList" [product]="prod">
+  <h3>Produkt</h3>
 </stn-item>

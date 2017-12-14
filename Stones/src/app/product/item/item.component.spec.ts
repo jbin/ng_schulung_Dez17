@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ItemComponent } from './item.component';
 import { By } from '@angular/platform-browser';
+import { BruttoPipe } from '../brutto.pipe';
 
 describe('ItemComponent', () => {
   let component: ItemComponent;
@@ -9,7 +10,7 @@ describe('ItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ItemComponent]
+      declarations: [ItemComponent, BruttoPipe]
     })
       .compileComponents();
   }));
