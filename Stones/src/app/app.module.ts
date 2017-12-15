@@ -18,7 +18,7 @@ const routes: Route[] = [
     AppComponent
   ],
   imports: [
-    BrowserModule, ProductModule, MatToolbarModule, MatIconModule,MatButtonModule,
+    BrowserModule, ProductModule, MatToolbarModule, MatIconModule, MatButtonModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

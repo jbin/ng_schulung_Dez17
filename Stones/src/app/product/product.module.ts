@@ -10,6 +10,7 @@ import { Route } from '@angular/router';
 import { ProductListComponent } from './product-list/product-list.component';
 import { RouterModule } from '@angular/router';
 import { ProductService } from './product.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Route[] = [
   { path: 'products', component: ProductListComponent },
@@ -19,7 +20,8 @@ const routes: Route[] = [
 @NgModule({
   imports: [
     CommonModule, ReactiveFormsModule, BrowserAnimationsModule,
-    MatInputModule, MatButtonModule, RouterModule.forChild(routes)
+    MatInputModule, MatButtonModule, RouterModule.forChild(routes),
+    HttpClientModule
   ],
   declarations: [ItemComponent, BruttoPipe, ProductFormComponent, ProductListComponent],
   providers: [ProductService],

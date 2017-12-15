@@ -2,7 +2,5 @@
     <ng-content></ng-content>
     <div class="id">id: {{product.id}} </div>
     <div>name: {{product.name}}</div>
-    <div>price: {{product.price | brutto:10}}</div>
-    <input type="text" #priceInput>
-    <button (click)="changePrice(priceInput)">Preisänderung</button>
+    <div>price: {{product.price | brutto:10 | currency}}</div>
 </div>
