@@ -17,4 +17,8 @@ export class ProductService {
   saveProduct(p: Product) {
    return this.http.post<Product>('http://train100:8080/api/products', p);
   }
+
+  deleteProduct(p: Product) {
+    return this.http.delete('http://train100:8080/api/products/' + p.id);
+  }
 }

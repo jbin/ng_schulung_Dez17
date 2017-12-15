@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { Product } from '../product';
 import { EventEmitter } from '@angular/core';
+import { ProductService } from '../product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'stn-item',
@@ -10,7 +12,7 @@ import { EventEmitter } from '@angular/core';
 export class ItemComponent implements OnInit {
 
   @Input() product: Product = new Product(0, 'Hallo', 23);
-  @Output() productChange: EventEmitter<Product> = new EventEmitter();
+  @Output() productDeleted: EventEmitter<Product> = new EventEmitter();
 
   myStyle = {
     border : '5px solid'
@@ -23,11 +25,14 @@ export class ItemComponent implements OnInit {
 
   raisePrice() {
     this.product.price += 5;
-    this.productChange.emit(this.product);
   }
 
   changePrice(priceInput) {
     this.product.price = priceInput.value;
+  }
+
+  deleteProduct(product: Product) {
+    this.productDeleted.emit(product);
   }
 
 }

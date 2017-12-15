@@ -3,4 +3,5 @@
     <div class="id">id: {{product.id}} </div>
     <div>name: {{product.name}}</div>
     <div>price: {{product.price | brutto:10 | currency}}</div>
+    <button mat-button color="accent" (click)="deleteProduct(product)" >Löschen</button>
 </div>
