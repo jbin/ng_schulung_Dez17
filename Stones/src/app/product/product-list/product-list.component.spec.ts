@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductListComponent } from './product-list.component';
+import { ProductService, MockProductService } from '../product.service';
+import { ItemComponent } from '../item/item.component';
+import { BruttoPipe } from '../brutto.pipe';
+import { By } from '@angular/platform-browser';
 
 describe('ProductListComponent', () => {
   let component: ProductListComponent;
@@ -8,9 +12,10 @@ describe('ProductListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductListComponent ]
+      declarations: [ProductListComponent, ItemComponent, BruttoPipe],
+      providers: [{ provide: ProductService, useClass: MockProductService }]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +24,20 @@ describe('ProductListComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('should create', async(() => {
+    component.productList.subscribe(
+      (list) => {
+        expect(list.length).toBe(2);
+        expect(list[0].id).toBe(1);
+      }
+    );
+  }));
+  it('should create', async(() => {
+    fixture.whenStable().then(() => {
+      fixture.detectChanges();
+      const itemElems = fixture.debugElement.query(By.css('.id'));
+      expect(itemElems.nativeElement.textContent).toBe('id: 1 ');
+    });
+  }));
+
 });
